@@ -15,7 +15,9 @@ def draw(data):
     ])+'|')
     for row in data[1:]:
         print('|'+'|'.join([
-            '  {}  '.format(item.rjust(max_sizes[i])) if i == (len(max_sizes) - 1) else '  {}  '.format(item.ljust(max_sizes[i]))
+            '  {}  '.format(item.rjust(max_sizes[i]))
+            if i == (len(max_sizes) - 1)
+            else '  {}  '.format(item.ljust(max_sizes[i]))
             for i, item in enumerate(row)
         ])+'|')
     print('-' * (sum(max_sizes) + len(max_sizes) * 5 + 1))

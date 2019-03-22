@@ -1,5 +1,6 @@
 import json
 
+
 def parsing(data):
     try:
         return read_json(data)
