@@ -24,5 +24,21 @@ def callme():
     return "Error"
 
 
+@app.route("/check", methods=['GET'])
+def check():
+    data = request.args
+    if data is None:
+        return "Content type error"
+    id_val = data.get("id_val", None)
+    if id_val:
+        return f"Dmitrii Tcibisov : {id_val}"
+    return "Error"
+
+
+@app.route("/fire", methods=['GET'])
+def fire():
+    pass
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8070")

@@ -21,7 +21,7 @@ def increment():
 
 @app.teardown_appcontext
 def teardown_file(exception):
-    f = getattr(g, '_database', None)
+    f = getattr(g, '_descr', None)
     if f is not None:
         f.close()
 
